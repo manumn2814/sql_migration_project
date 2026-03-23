@@ -1,0 +1,13 @@
+{
+	"name": "DS_LOOKUP_MAX_VALUE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServerLookupLinked",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
