@@ -1,0 +1,81 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfdevsqlmigration"
+		},
+		"ADLS_SQL_PARQUET_accountKey": {
+			"value": ""
+		},
+		"ADLS_SQL_PARQUET1_accountKey": {
+			"value": ""
+		},
+		"LS_ONPrem_Sqlserver_DW_password": {
+			"value": ""
+		},
+		"LS_Parent_SqlServer_DW_password": {
+			"value": ""
+		},
+		"Linked_Max_Child_password": {
+			"value": ""
+		},
+		"SqlServerLookupLinked_password": {
+			"value": ""
+		},
+		"child_LS_Max_Lookuup_password": {
+			"value": ""
+		},
+		"ADLS_SQL_PARQUET_properties_typeProperties_url": {
+			"value": "https://sqladlsmigration.dfs.core.windows.net"
+		},
+		"ADLS_SQL_PARQUET1_properties_typeProperties_url": {
+			"value": "https://sqladlsmigration.dfs.core.windows.net"
+		},
+		"LS_ONPrem_Sqlserver_DW_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"LS_ONPrem_Sqlserver_DW_properties_typeProperties_database": {
+			"value": "DataWarehouseDB"
+		},
+		"LS_ONPrem_Sqlserver_DW_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_Parent_SqlServer_DW_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"LS_Parent_SqlServer_DW_properties_typeProperties_database": {
+			"value": "DataWarehouseDB"
+		},
+		"LS_Parent_SqlServer_DW_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"Linked_Max_Child_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"Linked_Max_Child_properties_typeProperties_database": {
+			"value": "DataWarehouseDB"
+		},
+		"Linked_Max_Child_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"SqlServerLookupLinked_properties_typeProperties_server": {
+			"value": "DESKTOP-NL2VU0T"
+		},
+		"SqlServerLookupLinked_properties_typeProperties_database": {
+			"value": "DataWarehouseDB"
+		},
+		"SqlServerLookupLinked_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"child_LS_Max_Lookuup_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"child_LS_Max_Lookuup_properties_typeProperties_database": {
+			"value": "DataWarehouseDB"
+		},
+		"child_LS_Max_Lookuup_properties_typeProperties_userName": {
+			"value": "sa"
+		}
+	}
+}

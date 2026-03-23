@@ -1,0 +1,210 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfdevsqlmigration"
+		},
+		"ADLS_SQL_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLS_SQL_PARQUET'"
+		},
+		"ADLS_SQL_PARQUET1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLS_SQL_PARQUET1'"
+		},
+		"LS_ONPrem_Sqlserver_DW_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_ONPrem_Sqlserver_DW'"
+		},
+		"LS_Parent_SqlServer_DW_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_Parent_SqlServer_DW'"
+		},
+		"Linked_Max_Child_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Linked_Max_Child'"
+		},
+		"SqlServerLookupLinked_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServerLookupLinked'"
+		},
+		"child_LS_Max_Lookuup_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'child_LS_Max_Lookuup'"
+		},
+		"ADLS_SQL_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sqladlsmigration.dfs.core.windows.net"
+		},
+		"ADLS_SQL_PARQUET1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sqladlsmigration.dfs.core.windows.net"
+		},
+		"LS_ONPrem_Sqlserver_DW_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"LS_ONPrem_Sqlserver_DW_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "DataWarehouseDB"
+		},
+		"LS_ONPrem_Sqlserver_DW_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_Parent_SqlServer_DW_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"LS_Parent_SqlServer_DW_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "DataWarehouseDB"
+		},
+		"LS_Parent_SqlServer_DW_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"Linked_Max_Child_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"Linked_Max_Child_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "DataWarehouseDB"
+		},
+		"Linked_Max_Child_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"SqlServerLookupLinked_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-NL2VU0T"
+		},
+		"SqlServerLookupLinked_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "DataWarehouseDB"
+		},
+		"SqlServerLookupLinked_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"child_LS_Max_Lookuup_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"child_LS_Max_Lookuup_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "DataWarehouseDB"
+		},
+		"child_LS_Max_Lookuup_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adfdevsqlmigration_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ADLS_SQL_PARQUET_accountKey": {
+						"value": "[parameters('ADLS_SQL_PARQUET_accountKey')]"
+					},
+					"ADLS_SQL_PARQUET1_accountKey": {
+						"value": "[parameters('ADLS_SQL_PARQUET1_accountKey')]"
+					},
+					"LS_ONPrem_Sqlserver_DW_password": {
+						"value": "[parameters('LS_ONPrem_Sqlserver_DW_password')]"
+					},
+					"LS_Parent_SqlServer_DW_password": {
+						"value": "[parameters('LS_Parent_SqlServer_DW_password')]"
+					},
+					"Linked_Max_Child_password": {
+						"value": "[parameters('Linked_Max_Child_password')]"
+					},
+					"SqlServerLookupLinked_password": {
+						"value": "[parameters('SqlServerLookupLinked_password')]"
+					},
+					"child_LS_Max_Lookuup_password": {
+						"value": "[parameters('child_LS_Max_Lookuup_password')]"
+					},
+					"ADLS_SQL_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('ADLS_SQL_PARQUET_properties_typeProperties_url')]"
+					},
+					"ADLS_SQL_PARQUET1_properties_typeProperties_url": {
+						"value": "[parameters('ADLS_SQL_PARQUET1_properties_typeProperties_url')]"
+					},
+					"LS_ONPrem_Sqlserver_DW_properties_typeProperties_server": {
+						"value": "[parameters('LS_ONPrem_Sqlserver_DW_properties_typeProperties_server')]"
+					},
+					"LS_ONPrem_Sqlserver_DW_properties_typeProperties_database": {
+						"value": "[parameters('LS_ONPrem_Sqlserver_DW_properties_typeProperties_database')]"
+					},
+					"LS_ONPrem_Sqlserver_DW_properties_typeProperties_userName": {
+						"value": "[parameters('LS_ONPrem_Sqlserver_DW_properties_typeProperties_userName')]"
+					},
+					"LS_Parent_SqlServer_DW_properties_typeProperties_server": {
+						"value": "[parameters('LS_Parent_SqlServer_DW_properties_typeProperties_server')]"
+					},
+					"LS_Parent_SqlServer_DW_properties_typeProperties_database": {
+						"value": "[parameters('LS_Parent_SqlServer_DW_properties_typeProperties_database')]"
+					},
+					"LS_Parent_SqlServer_DW_properties_typeProperties_userName": {
+						"value": "[parameters('LS_Parent_SqlServer_DW_properties_typeProperties_userName')]"
+					},
+					"Linked_Max_Child_properties_typeProperties_server": {
+						"value": "[parameters('Linked_Max_Child_properties_typeProperties_server')]"
+					},
+					"Linked_Max_Child_properties_typeProperties_database": {
+						"value": "[parameters('Linked_Max_Child_properties_typeProperties_database')]"
+					},
+					"Linked_Max_Child_properties_typeProperties_userName": {
+						"value": "[parameters('Linked_Max_Child_properties_typeProperties_userName')]"
+					},
+					"SqlServerLookupLinked_properties_typeProperties_server": {
+						"value": "[parameters('SqlServerLookupLinked_properties_typeProperties_server')]"
+					},
+					"SqlServerLookupLinked_properties_typeProperties_database": {
+						"value": "[parameters('SqlServerLookupLinked_properties_typeProperties_database')]"
+					},
+					"SqlServerLookupLinked_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServerLookupLinked_properties_typeProperties_userName')]"
+					},
+					"child_LS_Max_Lookuup_properties_typeProperties_server": {
+						"value": "[parameters('child_LS_Max_Lookuup_properties_typeProperties_server')]"
+					},
+					"child_LS_Max_Lookuup_properties_typeProperties_database": {
+						"value": "[parameters('child_LS_Max_Lookuup_properties_typeProperties_database')]"
+					},
+					"child_LS_Max_Lookuup_properties_typeProperties_userName": {
+						"value": "[parameters('child_LS_Max_Lookuup_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
